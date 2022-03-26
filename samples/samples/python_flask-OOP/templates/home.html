@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            color: rgb(96, 73, 117);
+        }
+
+        tr:nth-child(even) {
+            background-color: rgb(215, 237, 240);
+        }
+
+        tr:nth-child(odd):not(:first-child) {
+            background-color: rgb(211, 207, 233);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>{{ school.name }}</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Student ID</th>
+            <th>Term</th>
+        </tr>
+
+
+        {% for student in school.students %}
+        <tr>
+            <td>{{ student.name }}</td>
+            <td>{{ student.student_id }}</td>
+            <td>{{ student.term }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+
+
+</body>
+
+</html>
